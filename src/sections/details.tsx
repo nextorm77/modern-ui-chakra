@@ -1,23 +1,19 @@
 import {
   FormControl,
   FormLabel,
+  Input,
   VStack,
   Heading,
   Text,
   SimpleGrid,
   GridItem,
-  Input,
+  Select,
+  Checkbox,
+  Button,
 } from "@chakra-ui/react";
 
 const Details = () => (
-  <VStack
-    w="full"
-    h="full"
-    p={10}
-    spacing={10}
-    alignItems="flex-start"
-    bg="gray.50"
-  >
+  <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
     <VStack spacing={3} alignItems="flex-start">
       <Heading size="2xl">Your details</Heading>
       <Text>If you already have an account. click here to log in.</Text>
@@ -34,6 +30,37 @@ const Details = () => (
           <FormLabel>Last Name</FormLabel>
           <Input placeholder="Doe" />
         </FormControl>
+      </GridItem>
+      <GridItem colSpan={2}>
+        <FormControl>
+          <FormLabel>Address</FormLabel>
+          <Input placeholder="Gwanakgu, Gwanakro 30 Gil 27" />
+        </FormControl>
+      </GridItem>
+      <GridItem colSpan={1}>
+        <FormControl>
+          <FormLabel>City</FormLabel>
+          <Input placeholder="Seoul" />
+        </FormControl>
+      </GridItem>
+      <GridItem colSpan={1}>
+        <FormControl>
+          <FormLabel>Country</FormLabel>
+          <Select>
+            <option value="usa">United States of America</option>
+            <option value="uae">United Arab Emirates</option>
+            <option value="nmk">North Macedonia</option>
+            <option value="de">Germany</option>
+          </Select>
+        </FormControl>
+      </GridItem>
+      <GridItem colSpan={2}>
+        <Checkbox defaultChecked>Ship to billing address.</Checkbox>
+      </GridItem>
+      <GridItem colSpan={2}>
+        <Button size="lg" w="full">
+          Place Order
+        </Button>
       </GridItem>
     </SimpleGrid>
   </VStack>
